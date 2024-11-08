@@ -5,39 +5,39 @@ body{
 }
 
 .header{
-  position: fixed; 
-  top: 0; 
-  left: 8px; 
-  right: 8px; 
-  z-index: 1; 
+  position: fixed; /* ヘッダーを固定位置に設定。 */
+  top: 0; /* ヘッダーの上端をウィンドウの上端に揃える。 */
+  left: 8px; /* ヘッダーの左端をウィンドウの左端に揃える。 */
+  right: 8px; /* ヘッダーの右端をウィンドウの右端に揃える。 */
+  z-index: 1; /* ヘッダーを他の要素の前面に表示。数字が大きいほど前に表示される。 */
   background-color: #4d0f0f;
   color: white;
-  padding: 5px; 
-  display: flex; 
-  justify-content: space-between; 
+  padding: 5px; /*要素の内側の余白を設定*/
+  display: flex; /*横並びにする（フレックスボックス）*/
+  justify-content: space-between; /*子要素（横並び）間にスペース*/
 }
 
 .header h3, .header p{
-    display: inline;
-    margin-right: 10px;
+    display: inline;/*要素をインライン要素へ変更*/
+    margin-right: 10px;/*要素の右側の外部余白（マージン）を設定*/
 }
 
 .header p{
     font-size: 13px;
-    text-align: end; 
-    margin-top: 30px; 
+    text-align: end; /*テキストを終端（右端）に揃える*/
+    margin-top: 30px; /*要素の上側の外部余白（マージン）を設定*/
 }
 
 .top-image{
-    background-image: url("top-image.jpg"); 
-    background-size: cover; 
-    padding: 180px; 
-    text-align: center; 
-    color: white; 
+    background-image: url("top-image.jpg"); /*背景画像*/
+    background-size: cover; /*背景画像を要素にフィットさせる*/
+    padding: 180px; /*テキストの上下に余白を設定*/
+    text-align: center; /*テキストを中央に揃える*/
+    color: white; /*文字の色*/
 }
 
 .top-image, .box h3, .box p, .profile-deta, .sentence, .creator{
-    font-family: serif;
+    font-family: serif; /*文字フォント変更*/
 }
 
 .profile-content{
@@ -61,15 +61,15 @@ body{
 }
 
 .profile{
-    display: flex; 
-    padding: 20px; 
-    margin: auto; 
+    display: flex; /*横並びにする（フレックスボックス）*/
+    padding: 20px; /*内側の余白*/
+    margin: auto; /*要素を中央に配置*/
     align-items: center;
-    justify-content: center; 
+    justify-content: center; /*要素を水平方向に中央揃えにする*/
 }
 
 .profile img{
-    margin-right: 64px;
+    margin-right: 64px; /*画像とテキストの間に余白を設定*/
 }
 
 .profile-deta{
@@ -190,12 +190,12 @@ a.botton_top{ /*TOPボタン*/
         justify-content: center;
     }
     .container{
-        display: flex; 
-        flex-direction: column; 
-        justify-content: center; 
-        gap: 60px; 
+        display: flex; /*フレックスボックス*/
+        flex-direction: column; /*アイテムを縦に並べる*/
+        justify-content: center; /*アイテムを中央揃えにする*/
+        gap: 60px; /*アイテム間の幅を調整*/
         align-items: center;
-        margin-top: 50px; 
+        margin-top: 50px; /*上部に余白*/
    }
    .profile img{
         display: block;
@@ -380,57 +380,45 @@ nav {
 }
 
 .scrollin {
-  opacity: 1;
-  visibility: visible;
+  opacity: 1;/*要素の透明度を1。*/
+  visibility: visible;/*要素を表示するように設定。*/
   transform: translateY(0px);
+  /*要素を垂直方向に0ピクセル移動。要素は元の位置に戻る。*/
 }
 
 .works {
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
   padding: 20px;
+  text-align: center;
 }
 
-.works h2, .works p {
-  padding: 0.5rem 0;
-  margin-bottom: 0.6rem;
-  background-image: linear-gradient(90deg, #c44444 0 20%, #938282 20%);
-  background-repeat: no-repeat;
-  background-size: 10% 10%;
-  background-position: bottom;
-  color: #323232;
-  font-weight: bold;
-  font-size: 26px;
-}
-
-.works .color {
-  color: #910808;
-}
-
-.works .work-item {
+.work-item {
   width: calc(50% - 20px); /* 2つ並べるために幅を50%に設定し、間隔を考慮 */
   background-color: rgba(255, 255, 255, 0.7);
   padding: 10px;
   border: 3px solid white;
   box-sizing: border-box;
-  margin: 10px;
 }
 
-.works .work-item img {
+.work-item img {
   width: 100%;
   height: auto;
 }
 
-.works .work-item p {
+.work-item p {
   margin: 10px 0 0 0;
   font-size: small;
   font-weight: bold;
 }
 
-.works .work-item a {
+.work-item a {
   text-decoration: none;
   color: #910808;
 }
 
-.works .work-item a:hover {
+.work-item a:hover {
   color: #BD1C1C;
 }
