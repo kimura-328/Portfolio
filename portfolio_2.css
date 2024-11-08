@@ -370,7 +370,7 @@ nav {
 }
 
 /*フェードイン*/
-.profile-content, .self-pr, .vision {
+.profile-content, .self-pr, .vision, .works {
   opacity: 0;/*要素の透明度を0にして、完全に透明にしている*/
   visibility: hidden;/*要素を非表示に設定。要素はページレイアウトにスペースを占め続ける。*/
   transform: translateY(50px);/*要素を垂直方向（Y軸）に50ピクセル移動させる。*/
@@ -384,4 +384,41 @@ nav {
   visibility: visible;/*要素を表示するように設定。*/
   transform: translateY(0px);
   /*要素を垂直方向に0ピクセル移動。要素は元の位置に戻る。*/
+}
+
+.works {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.work-item {
+  width: calc(50% - 20px); /* 2つ並べるために幅を50%に設定し、間隔を考慮 */
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  border: 3px solid white;
+  box-sizing: border-box;
+}
+
+.work-item img {
+  width: 100%;
+  height: auto;
+}
+
+.work-item p {
+  margin: 10px 0 0 0;
+  font-size: small;
+  font-weight: bold;
+}
+
+.work-item a {
+  text-decoration: none;
+  color: #910808;
+}
+
+.work-item a:hover {
+  color: #BD1C1C;
 }
