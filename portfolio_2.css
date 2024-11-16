@@ -44,7 +44,11 @@ body{
     text-align: center;
 }
 
-.profile-content h2 , .self-pr h2, .vision h2{
+.profile-content p, .self-pr p, .vision p {
+  margin-top: 0px;
+}
+
+.profile-content h2 , .self-pr h2, .vision h2, .works h2{
     padding: 0.5rem 0;
     margin-bottom: 0.6rem;
     background-image: linear-gradient(90deg, #c44444 0 20%, #938282 20%);
@@ -54,6 +58,15 @@ body{
     color: #323232;
     font-weight: bold;
     font-size: 26px;
+}
+
+.work-item video, .work-item img {
+  width: 100%;
+  height: auto;
+  max-width: 500px; /* 動画の最大幅を設定 */
+  border: 2px solid #ccc; /* 動画に枠線を追加 */
+  border-radius: 10px; /* 角を丸くする */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影を追加 */
 }
 
 .color{
@@ -133,6 +146,30 @@ body{
     }
 }
 
+.works{
+  text-align: center;
+}
+
+.work-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.work-item {
+  width: calc(50% - 20px);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .work-item {
+      width: 100%;
+  }
+}
+
 .coming-soon {
     font-weight: bold; /* フォントを太字にする */
     text-align: center; /* テキストを中央揃えにする */
@@ -203,19 +240,11 @@ a.botton_top{ /*TOPボタン*/
         margin-right: auto;
 }
 }
-.profile-content h2, .self-pr h2, .vision h2 {
-    margin-bottom: 0px;
-}
-
-.profile-content p, .self-pr p, .vision p {
-    margin-top: 0px;
-}
 
 .coming-soon h1 {
     height: 27px;
     margin-bottom: 0px;
 }
-
 
 nav {
     display: flex;
@@ -370,7 +399,7 @@ nav {
 }
 
 /*フェードイン*/
-.profile-content, .self-pr, .vision {
+.profile-content, .self-pr, .vision, .works {
   opacity: 0;/*要素の透明度を0にして、完全に透明にしている*/
   visibility: hidden;/*要素を非表示に設定。要素はページレイアウトにスペースを占め続ける。*/
   transform: translateY(50px);/*要素を垂直方向（Y軸）に50ピクセル移動させる。*/
@@ -386,3 +415,26 @@ nav {
   /*要素を垂直方向に0ピクセル移動。要素は元の位置に戻る。*/
 }
 
+canvas {
+  display: block;
+  margin: 0 auto;
+  background: #000;
+  max-width: 500px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.start-button, .end-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #0095DD;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.start-button:hover, .end-button:hover {
+  background-color: #007bb5;
+}

@@ -1,29 +1,29 @@
-$(window).scroll(function () {//�X�N���[������邽�тɊ֐������s
-    $(".profile-content,.self-pr, .vision").each(function () {
-        /*.profile-content�A.self-pr�A.vision�̊e�N���X�����v�f�ɑ΂��āA�w�肵���֐������s�B
-        .each()�́A�I�������e�v�f�ɑ΂��Ċ֐������s�B
-        .each()���g�p���Ȃ��ƁAjQuery�͍ŏ��̈�̗v�f�i.profile-content�A.self-pr�A.vision�N���X�����ŏ��̗v�f�j�����ɑ�����s���悤�ɂȂ�B
-        ���ׂĂ̗v�f�ɑ΂��đ�����s�������ꍇ�́A.each()���g�p����*/
+$(window).scroll(function () {//スクロールされるたびに関数を実行
+    $(".profile-content,.self-pr, .vision, .works").each(function () {
+        /*.profile-content、.self-pr、.visionの各クラスを持つ要素に対して、指定した関数を実行。
+        .each()は、選択した各要素に対して関数を実行。
+        .each()を使用しないと、jQueryは最初の一つの要素（.profile-content、.self-pr、.visionクラスを持つ最初の要素）だけに操作を行うようになる。
+        すべての要素に対して操作を行いたい場合は、.each()を使用する*/
         var elemPos = $(this).offset().top,
-        /*���݂̏������̗v�f�i.profile-content�A.self-pr�A.vision�N���X�����v�f�j
-        �̏�[�̈ʒu���E�B���h�E�̏ォ��̋����Ƃ��Ď擾�B
-        �����elemPos�Ƃ����ϐ��Ɋi�[����B
-        .offset().top�͗v�f�̏�[�̈ʒu���擾���郁�\�b�h�B
-        �܂��A�ȉ���scroll��windowHeight�𓯗l�Ɂuvar�v�Ő錾���邽�߂Ɂu,�v��������B*/
+        /*現在の処理中の要素（.profile-content、.self-pr、.vision、.worksクラスを持つ要素）
+        の上端の位置をウィンドウの上からの距離として取得。
+        それをelemPosという変数に格納する。
+        .offset().topは要素の上端の位置を取得するメソッド。
+        また、以下のscrollとwindowHeightを同様に「var」で宣言するために「,」がつけられる。*/
         scroll = $(window).scrollTop(),
-        /*���݂̃X�N���[���ʒu���E�B���h�E�̏ォ��̋����Ƃ��Ď擾�B
-        �����scroll�Ƃ����ϐ��Ɋi�[�B
-        ���[�U���ǂꂾ���y�[�W���X�N���[�������������߂�B*/
+        /*現在のスクロール位置をウィンドウの上からの距離として取得。
+        それをscrollという変数に格納。
+        ユーザがどれだけページをスクロールしたかを求める。*/
         windowHeight = $(window).height();
-        /*�u���E�U�̕\���̈�̍������擾�B
-        windowHeight�Ƃ����ϐ��Ɋi�[�B*/
+        /*ブラウザの表示領域の高さを取得。
+        windowHeightという変数に格納。*/
         if (scroll > elemPos - windowHeight + 200){
-            /*���݂̃X�N���[���ʒu������̗v�f�̏�[�̈ʒu����E�B���h�E�̍�����
-            200�s�N�Z�����������l�����傫�����ǂ����𔻒肵�Ă���B
-            ���̎����^�ɂȂ�Ƃ��A����̗v�f�̏�[���E�B���h�E�̉��[����200�s�N�Z��
-            ��ɗ����Ƃ��A�Ƃ������Ƃ��Ӗ�����B*/
+            /*現在のスクロール位置が特定の要素の上端の位置からウィンドウの高さと
+            200ピクセルを引いた値よりも大きいかどうかを判定している。
+            この式が真になるとき、特定の要素の上端がウィンドウの下端から200ピクセル
+            上に来たとき、ということを意味する。*/
             $(this).addClass('scrollin');
-            /*���݂̗v�f�i$(this)�j��scrollin�Ƃ����N���X��ǉ�����B*/
+            /*現在の要素（$(this)）にscrollinというクラスを追加する。*/
 }
 });
 });
