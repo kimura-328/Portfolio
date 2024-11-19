@@ -201,17 +201,6 @@ a.botton_top{ /*TOPボタン*/
     font-size: small;
 }
 
-.insta {
-  display: flex;
-  justify-content: center;
-}
-.insta .fa-instagram{
-  color:  #f8f4e6;
-}
-.insta .fa-instagram:hover {
-  color: #BD1C1C;
-}
-
 @media (max-width: 767px){
    .box{
         background-color: rgba(255, 255, 255, 0.7);
@@ -388,16 +377,7 @@ nav {
       display: none;
     }
   }
-
-  .fa-brands fa-instagram{
-    font-family: "Font Awesome 5 Brands";
-  }
-
-  .fab.fa-instagram.fa-2x.fa-border {
-    border: 3px solid rgba(255, 255, 255, 0.7); /* ここでborderの色と透明度を指定 */
-
-}
-
+  
 /*フェードイン*/
 .profile-content, .self-pr, .vision, .works {
   opacity: 0;/*要素の透明度を0にして、完全に透明にしている*/
